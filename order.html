@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Order </title>
+    <style>
+        .nav-item {
+            font-family: 'Playfair Display', serif;
+            font-size: x-large;
+        }
+        .order-form {
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid crimson;
+            border-radius: 10px;
+        }
+        .order-form h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+        .navbar{
+    background-image: url(data:image/jpeg;base64,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);
+  padding-bottom: 5%;
+          
+  }
+  .nav-item {
+        margin-bottom: 10px; /* Space out the items vertically */
+    }
+    
+@media (max-width: 767px) {
+    .navbar-nav {
+        width: auto; 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+  }
+    
+  body{
+  
+  border: 10px solid crimson;
+}
+.marquee{
+    display: flex;
+            flex-direction: column;
+            
+}
+        
+.container {
+            display: flex;
+            flex-direction: row;
+        }
+        .form-container {
+            flex: 2;
+            margin-bottom: 2%;
+        }
+        .images-container {
+            flex: 1.7;
+            margin-left: 5px;
+        }
+       
+        
+       
+        
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar part from Bootstrap website with some changes -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="order.html">Order</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <form class="order-form">
+                <h2>Place Your Order</h2><img src="cafelogo.jpg" width="150x" height="100px">
+                <div class="a">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="a">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="a">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" required>
+                </div>
+                <div class="a">
+                    <label for="coupon" class="form-label">Coupon Code (if any)</label>
+                    <input type="text" class="form-control" id="coupon">
+                </div>
+                <div class="a">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="a">
+                    <label for="drinks" class="form-label">Drinks</label>
+                   
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Choose your drinks</option> <!--used bootstrap select-->
+                        <option value="1">Caffe Latte ₹305</option>
+                        <option value="2">Caffè Mocha ₹340.70</option>
+                        <option value="3">Caffe Americano ₹240</option>
+                        <option value="4">Iced Cappuccino ₹240.30</option>
+                        <option value="5">Chocolate Cappuccino ₹310</option>
+                        <option value="6">Flat White ₹330</option>
+                        <option value="7">Doppio Espresso ₹278</option>
+                        <option value="8">Velvet Vanilla Latte ₹352</option>
+                        <option value="9">White Chocolate Mocha ₹324</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label for="food" class="form-label">Food</label>
+                    
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Choose your food</option> <!--used bootstrap select-->
+                        <option value="10">Basil Mozzarella Cheese Sandwich ₹350</option>
+                        <option value="11">Soya Chaap Wrap ₹250 </option>
+                        <option value="12">Spinach Corn & Cheese Sandwich  ₹240</option>
+                        <option value="13">Chicken Wrap ₹367</option>
+                        <option value="14">Chilli Cheese Toast ₹270</option>
+                        <option value="15">Classic Garlic Bread ₹150</option>
+                        <option value="16">Stuffed Garlic Bread(Veg) ₹230</option>
+                        <option value="17">Stuffed Garlic Bread(Non Veg) ₹260</option>
+                        <option value="18">Tandoori Paneer Bun  ₹190  </option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label for="desserts" class="form-label">Desserts</label>
+                    
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Choose your Dessert's</option> <!--used bootstrap select-->
+                        <option value="19"> Red Velvet Pastry ₹120</option>
+                        <option value="21"> Fudgy Brownie Sundae ₹200 </option>
+                        <option value="22"> Dutch Truffle Cake ₹340</option>
+                        <option value="23"> Hazelnut Brownie ₹90</option>
+                        <option value="24">Classic Brownie ₹50 </option>
+                        <option value="25"> Strawberry Cheesecake ₹340</option>
+                        <option value="26"> Caramel Sundae ₹210</option>
+                        <option value="27">Butterscotch Crunch Pastry ₹130 </option>
+                        <option value="28">  Croissant ₹120</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label for="addons" class="form-label">Add-ons</label>
+                    
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Add-on's</option> <!--used bootstrap select-->
+                        <option value="29"> Whipped Cream ₹10</option>
+                        <option value="30">  Cookies ₹50</option>
+                        <option value="31">Flavoured Syrups ₹15 </option>
+                       
+                      </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Order</button>
+            </form>
+        </div>
+        <div class="images-container">
+            
+                  <marquee >  <img src="mu.jpg" alt="Image 1">
+                   
+                    <img src="stu.jpg" alt="Image 3">
+                    </marquee>
+               
+        </div>
+
+</body>
+
+</html>
+
+<!--     
+    <img src="sap.jpg" alt="Image 2"> -->
